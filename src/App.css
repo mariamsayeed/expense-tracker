@@ -153,7 +153,16 @@ input[type='number'] {
 .btn-increase{
   background-color: lightblue;
   font-size: 20px;
-  padding: 2px 5px;
+  padding: .7rem 1.5rem;
+  margin: 5px 5px;
+  border:none;
+  border-radius: 5px;
+}
+
+.btn-decrease{
+  background-color: red;
+  font-size: 20px;
+  padding: .7rem 1.5rem;
   margin: 5px 5px;
   border:none;
   border-radius: 5px;
