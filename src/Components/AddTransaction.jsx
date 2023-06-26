@@ -1,13 +1,11 @@
 import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
-
+import AmountButtons from './AmountButtons';
 
 const AddTransaction = () => {
     const [text, setText] = useState('');
-    const [amount, setAmount] = useState(0);
-
-    const{ addTransaction } = useContext(GlobalContext);
-
+    
+    const{ addTransaction ,setAmount,amount } = useContext(GlobalContext);
     const onSubmit = e => {
         e.preventDefault();
 
@@ -17,12 +15,8 @@ const AddTransaction = () => {
             amount: +amount
         }
         addTransaction(newTransaction);
-
     }
     
-
-
-
   return (
   <>
   <h3>Add new transaction</h3>
@@ -37,10 +31,8 @@ const AddTransaction = () => {
         </label>
         <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder='Enter amount...'/>
     </div>
-    <button className='btn-increase' onClick={()=>{setAmount(10)}}>10</button>
-    <button className='btn-increase' onClick={()=>{setAmount(20)}}>20</button>
-    <button className='btn-increase' onClick={()=>{setAmount(100)}}>100</button>
-    <button class="btn" >Add transaction</button>
+    <AmountButtons />
+    <button className="btn" >Add transaction</button>
   </form>
   </>
   )
